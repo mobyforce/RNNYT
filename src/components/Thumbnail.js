@@ -1,19 +1,20 @@
 import React, { PropTypes } from 'react';
 import {
   StyleSheet,
+  View,
   Image
 } from 'react-native';
 import Title from './Title';
 
 const Thumbnail = ({ url, titleText, ascentColor, style }) => {
   const imageStyle = {
-    backgroundColor: `${ascentColor}77`
+    backgroundColor: `${ascentColor}`
   };
 
   const TitleComponent = <Title style={styles.title}>{titleText}</Title>;
 
   return (
-    <View style={[styles.container, { borderColor: accentColor }, style]}>
+    <View style={[styles.container, { borderColor: ascentColor }, style]}>
       <Image
         style={[styles.image]}
         source={{
