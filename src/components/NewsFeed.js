@@ -102,7 +102,7 @@ NewsFeed.defaultProps = {
   news: [
     {
       title: 'React Native',
-      imageUrl: 'https://facebook.github.io/react/img/logo_og.png',
+      imageUrl: 'https://discoversdkcdn.azureedge.net/postscontent/logo-578x270.png',
       description: 'Build Native Mobile Apps using JavaScript and React',
       date: new Date(),
       author: 'Facebook',

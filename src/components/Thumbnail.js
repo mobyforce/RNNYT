@@ -1,28 +1,36 @@
 import React, { PropTypes } from 'react';
 import {
   StyleSheet,
-  View,
-  Image
+  Image,
+  View
 } from 'react-native';
 import Title from './Title';
 
-const Thumbnail = ({ url, titleText, ascentColor, style }) => {
+const Thumbnail = ({ url, titleText, accentColor, style }) => {
   const imageStyle = {
-    backgroundColor: `${ascentColor}`
+    backgroundColor: `${accentColor}`
   };
 
   const TitleComponent = <Title style={styles.title}>{titleText}</Title>;
 
   return (
-    <View style={[styles.container, { borderColor: ascentColor }, style]}>
-      <Image
-        style={[styles.image]}
-        source={{
-          uri: url
-        }}
-      >
-        <Title style={styles.title}>{titleText}</Title>
-      </Image>
+    <View style={[styles.container, { borderColor: accentColor }, style]}>
+      {url.length  > 0 ? (
+        <Image
+          style={[styles.image]}
+          source={{
+            uri: url
+          }}
+        >
+          <Title style={styles.title}>{titleText}</Title>
+        </Image>
+      ) : (
+        <View
+          style={[styles.image, imageStyle]}
+        >
+          {TitleComponent}
+        </View>
+      )}
     </View>
   );
 };
@@ -31,7 +39,7 @@ Thumbnail.propTypes = {
   style: View.propTypes.style,
   url: PropTypes.string.isRequired,
   titleText: PropTypes.string,
-  ascentColor: PropTypes.string.isRequired
+  accentColor: PropTypes.string.isRequired
 };
 
 const styles = StyleSheet.create({
