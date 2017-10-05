@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import {
   TabBarIOS,
-  Text
+  Text,
+  Alert,
+  Vibration
 } from 'react-native';
 import NewsFeed from './NewsFeed';
+import Search from './Search';
 import * as globalStyles from '../styles/global';
 
 export default class HomeScreen extends Component {
@@ -12,6 +15,17 @@ export default class HomeScreen extends Component {
     this.state = {
       tab: 'newsFeed'
     };
+  }
+
+  showBookmarkAlert() {
+    Vibration.vibrate();
+    Alert.alert(
+      'Coming Soon!',
+      'We\'re hard at work on this feature, check back in the near future.',
+      [
+        { text: 'OK', onPress: () => console.log('User pressed OK') }
+      ]
+    );
   }
 
   render() {
@@ -29,12 +43,12 @@ export default class HomeScreen extends Component {
           selected={this.state.tab === 'search'}
           onPress={() => this.setState({ tab: 'search' })}
         >
-          <Text>Search</Text>
+          <Search/>
         </TabBarIOS.Item>
         <TabBarIOS.Item
           systemIcon={'bookmarks'}
           selected={this.state.tab === 'bookmarks'}
-          onPress={() => this.setState({ tab: 'bookmarks' })}
+          onPress={() => this.showBookmarkAlert()}
         >
           <Text>Bookmarks</Text>
         </TabBarIOS.Item>
