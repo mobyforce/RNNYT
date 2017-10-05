@@ -3,7 +3,8 @@ import {
   TabBarIOS,
   Text,
   Alert,
-  Vibration
+  Vibration,
+  StatusBar
 } from 'react-native';
 import NewsFeed from './NewsFeed';
 import Search from './Search';
@@ -15,6 +16,8 @@ export default class HomeScreen extends Component {
     this.state = {
       tab: 'newsFeed'
     };
+
+    StatusBar.setBarStyle('dark-content'); 
   }
 
   showBookmarkAlert() {
