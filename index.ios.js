@@ -7,6 +7,6 @@
  import {
    AppRegistry
  } from 'react-native';
- import HomeScreen from './src/components/HomeScreen';
+ import App from './src/App';
 
- AppRegistry.registerComponent('RNNYT', () => HomeScreen);
+ AppRegistry.registerComponent('RNNYT', () => App);

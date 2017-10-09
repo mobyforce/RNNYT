@@ -1,0 +1,2 @@
+const NYT_API_KEY = '249944597c1a44cf846f9ce587786126'; 
+export default NYT_API_KEY;

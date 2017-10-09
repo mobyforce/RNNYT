@@ -6,8 +6,9 @@ import {
   Vibration,
   StatusBar
 } from 'react-native';
-import NewsFeed from './NewsFeed';
+import NewsFeedContainer from '../containers/newsFeedContainer';
 import Search from './Search';
+import SearchContainer from '../containers/searchContainer';
 import * as globalStyles from '../styles/global';
 
 export default class HomeScreen extends Component {
@@ -17,7 +18,7 @@ export default class HomeScreen extends Component {
       tab: 'newsFeed'
     };
 
-    StatusBar.setBarStyle('dark-content'); 
+    StatusBar.setBarStyle('dark-content');
   }
 
   showBookmarkAlert() {
@@ -39,14 +40,14 @@ export default class HomeScreen extends Component {
           selected={this.state.tab === 'newsFeed'}
           onPress={() => this.setState({ tab: 'newsFeed' })}
         >
-          <NewsFeed />
+          <NewsFeedContainer />
         </TabBarIOS.Item>
         <TabBarIOS.Item
           systemIcon={'search'}
           selected={this.state.tab === 'search'}
           onPress={() => this.setState({ tab: 'search' })}
         >
-          <Search/>
+          <SearchContainer/>
         </TabBarIOS.Item>
         <TabBarIOS.Item
           systemIcon={'bookmarks'}
